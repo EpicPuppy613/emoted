@@ -1,0 +1,9 @@
+{
+  "extends": "@tsconfig/node18/tsconfig.json",
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "Node"
+  }
+}
