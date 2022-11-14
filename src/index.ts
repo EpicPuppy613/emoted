@@ -2,13 +2,15 @@
 import * as dotenv from "dotenv";
 import * as fs from "fs";
 import * as path from "path";
+import * as url from "url";
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 // @ts-ignore
 import * as mysql from "mysql";
 import {promisify} from "util";
 import {Client, Collection, Events, GatewayIntentBits, SlashCommandBuilder} from "discord.js";
 dotenv.config();
 const token = process.env.DISCORD_TOKEN;
-const commandsPath: string = String(process.env.COMMANDS_DIR);
+const commandsPath: string = path.join(__dirname, "commands");
 
 type Command = {
     data: SlashCommandBuilder,
